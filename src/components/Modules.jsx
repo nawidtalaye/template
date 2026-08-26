@@ -16,6 +16,16 @@ import {
 import SectionTitle from "./SectionTitle";
 import { faNum } from "../lib/utils";
 
+/* پالت رنگی متنوع برای کارت‌ها */
+const tones = [
+  { bg: "bg-brand-500/12", text: "text-brand-500", glow: "group-hover:bg-brand-500/15", bar: "from-brand-500 to-brand-400" },
+  { bg: "bg-sky-500/12", text: "text-sky-500", glow: "group-hover:bg-sky-500/15", bar: "from-sky-500 to-sky-400" },
+  { bg: "bg-violet-500/12", text: "text-violet-500", glow: "group-hover:bg-violet-500/15", bar: "from-violet-500 to-violet-400" },
+  { bg: "bg-amber-500/12", text: "text-amber-500", glow: "group-hover:bg-amber-500/15", bar: "from-amber-500 to-amber-400" },
+  { bg: "bg-rose-500/12", text: "text-rose-500", glow: "group-hover:bg-rose-500/15", bar: "from-rose-500 to-rose-400" },
+  { bg: "bg-emerald-500/12", text: "text-emerald-500", glow: "group-hover:bg-emerald-500/15", bar: "from-emerald-500 to-emerald-400" },
+];
+
 const modules = [
   { icon: FileSignature, title: "قرارداد و خرید", desc: "ثبت قرارداد با تحویل‌دهنده، مقدار، نرخ و پیگیری میزان اجرای هر قرارداد" },
   { icon: Truck, title: "حمل و بارنامه", desc: "تخصیص تانکر و راننده، صدور اسناد حمل (CMR) و پیگیری محموله در مسیر" },
@@ -43,27 +53,31 @@ export default function Modules() {
         />
 
         <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-          {modules.map((m, i) => (
-            <motion.div
-              key={m.title}
-              initial={{ opacity: 0, y: 34 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-60px" }}
-              transition={{ duration: 0.6, delay: (i % 4) * 0.09 }}
-              whileHover={{ y: -7 }}
-              className="group card-soft relative overflow-hidden rounded-2xl p-6 transition-all duration-300 hover:border-brand-500/30 hover:shadow-xl hover:shadow-brand-500/12"
-            >
-              <div className="absolute -left-10 -top-10 h-28 w-28 rounded-full bg-brand-500/0 blur-2xl transition-all duration-500 group-hover:bg-brand-500/15" />
-              <span className="absolute left-4 top-4 text-xs font-black text-brand-900/15 fa-num transition-colors group-hover:text-brand-500/50">
-                {faNum(String(i + 1).padStart(2, "0"))}
-              </span>
-              <span className="mb-4 grid h-12 w-12 place-items-center rounded-xl bg-gradient-to-br from-brand-500/12 to-brand-400/8 ring-1 ring-brand-500/15 transition-transform duration-300 group-hover:scale-110 group-hover:rotate-3">
-                <m.icon className="h-6 w-6 text-brand-500 transition-colors group-hover:text-brand-600" strokeWidth={1.8} />
-              </span>
-              <h3 className="text-lg font-extrabold text-brand-900">{m.title}</h3>
-              <p className="mt-2 text-sm leading-7 text-brand-900/55">{m.desc}</p>
-            </motion.div>
-          ))}
+          {modules.map((m, i) => {
+            const t = tones[i % tones.length];
+            return (
+              <motion.div
+                key={m.title}
+                initial={{ opacity: 0, y: 34 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-60px" }}
+                transition={{ duration: 0.6, delay: (i % 4) * 0.09 }}
+                whileHover={{ y: -7 }}
+                className="group card-soft relative overflow-hidden rounded-2xl p-6 transition-all duration-300 hover:shadow-xl hover:shadow-brand-900/10"
+              >
+                <div className={`absolute inset-x-0 top-0 h-1 w-0 bg-gradient-to-l ${t.bar} transition-all duration-500 group-hover:w-full`} />
+                <div className={`absolute -left-10 -top-10 h-28 w-28 rounded-full blur-2xl transition-all duration-500 ${t.glow}`} />
+                <span className={`absolute left-4 top-4 text-xs font-black text-brand-900/15 fa-num transition-colors ${t.text.replace("text-", "group-hover:text-")}`}>
+                  {faNum(String(i + 1).padStart(2, "0"))}
+                </span>
+                <span className={`mb-4 grid h-12 w-12 place-items-center rounded-xl ${t.bg} ring-1 ring-brand-900/5 transition-transform duration-300 group-hover:scale-110 group-hover:rotate-3`}>
+                  <m.icon className={`h-6 w-6 ${t.text}`} strokeWidth={1.8} />
+                </span>
+                <h3 className="text-lg font-extrabold text-brand-900">{m.title}</h3>
+                <p className="mt-2 text-sm leading-7 text-brand-900/55">{m.desc}</p>
+              </motion.div>
+            );
+          })}
         </div>
       </div>
     </section>
