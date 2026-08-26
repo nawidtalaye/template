@@ -3,7 +3,7 @@
 @theme {
   --font-sans: "Vazirmatn", ui-sans-serif, system-ui, sans-serif;
 
-  /* Novatech palette */
+  /* Primary Brand Palette */
   --color-brand-50: #eefaf8;
   --color-brand-100: #d2e3e2;
   --color-brand-200: #a8d6d0;
@@ -16,18 +16,55 @@
   --color-brand-900: #1e3c3d;
   --color-brand-950: #122829;
 
+  /* Warm Flame / Petroleum Gold Accents — Brings warmth and life to the UI */
+  --color-amber-400: #fbbf24;
+  --color-amber-500: #f59e0b;
+  --color-amber-600: #d97706;
+  --color-orange-400: #fb923c;
+  --color-orange-500: #f97316;
+  --color-orange-600: #ea580c;
+  --color-flame-400: #ff7849;
+  --color-flame-500: #ff5722;
+  --color-flame-600: #e64a19;
+
+  /* Technology & Financial SaaS Accents */
+  --color-sky-400: #38bdf8;
+  --color-sky-500: #0ea5e9;
+  --color-sky-600: #0284c7;
+  --color-indigo-400: #818cf8;
+  --color-indigo-500: #6366f1;
+  --color-indigo-600: #4f46e5;
+  --color-violet-400: #a78bfa;
+  --color-violet-500: #8b5cf6;
+  --color-emerald-400: #34d399;
+  --color-emerald-500: #10b981;
+  --color-emerald-600: #059669;
+  --color-rose-400: #fb7185;
+  --color-rose-500: #f43f5e;
+
+  /* Animations */
   --animate-marquee: marquee 40s linear infinite;
+  --animate-marquee-reverse: marqueeRev 40s linear infinite;
   --animate-float: float 7s ease-in-out infinite;
   --animate-float-slow: float 11s ease-in-out infinite;
-  --animate-orbit: orbit 26s linear infinite;
-  --animate-orbit-rev: orbitRev 26s linear infinite;
+  --animate-orbit: orbit 28s linear infinite;
+  --animate-orbit-rev: orbitRev 28s linear infinite;
+  --animate-orbit-slow: orbit 45s linear infinite;
+  --animate-orbit-rev-slow: orbitRev 45s linear infinite;
   --animate-pulse-ring: pulseRing 2.6s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  --animate-pulse-glow: pulseGlow 3s ease-in-out infinite;
   --animate-shimmer: shimmer 3s linear infinite;
   --animate-blink: blink 1s step-end infinite;
+  --animate-spin-slow: spin 20s linear infinite;
+  --animate-radar: radar 3s linear infinite;
 
   @keyframes marquee {
     from { transform: translateX(0); }
     to { transform: translateX(50%); }
+  }
+  @keyframes marqueeRev {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
   }
   @keyframes float {
     0%, 100% { transform: translateY(0); }
@@ -42,8 +79,12 @@
     to { transform: rotate(-360deg); }
   }
   @keyframes pulseRing {
-    0% { transform: scale(1); opacity: 0.5; }
-    100% { transform: scale(1.9); opacity: 0; }
+    0% { transform: scale(1); opacity: 0.6; }
+    100% { transform: scale(2); opacity: 0; }
+  }
+  @keyframes pulseGlow {
+    0%, 100% { opacity: 0.4; transform: scale(1); }
+    50% { opacity: 0.85; transform: scale(1.08); }
   }
   @keyframes shimmer {
     from { background-position: 200% center; }
@@ -52,6 +93,10 @@
   @keyframes blink {
     0%, 100% { opacity: 1; }
     50% { opacity: 0; }
+  }
+  @keyframes radar {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
   }
 }
 
@@ -67,19 +112,33 @@ body {
 }
 
 ::selection {
-  background: rgba(5, 161, 143, 0.25);
-  color: #0a5c4b;
+  background: rgba(245, 158, 11, 0.25);
+  color: #d97706;
 }
 
 ::-webkit-scrollbar { width: 9px; }
-::-webkit-scrollbar-track { background: #eefaf8; }
+::-webkit-scrollbar-track { background: #fdfaf3; }
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(180deg, #05a18f, #0a5c4b);
+  background: linear-gradient(180deg, #f59e0b, #05a18f);
   border-radius: 8px;
 }
 
 .text-gradient {
-  background: linear-gradient(115deg, #05a18f 20%, #26bcad 50%, #0b6c5d 85%);
+  background: linear-gradient(115deg, #05a18f 10%, #0284c7 50%, #d97706 95%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.text-gradient-warm {
+  background: linear-gradient(115deg, #f59e0b 0%, #f97316 50%, #e11d48 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.text-gradient-teal {
+  background: linear-gradient(115deg, #05a18f 0%, #26bcad 60%, #0b6c5d 100%);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -88,15 +147,21 @@ body {
 .card-soft {
   background: #ffffff;
   border: 1px solid rgba(30, 60, 61, 0.08);
-  box-shadow: 0 1px 3px rgba(30, 60, 61, 0.05), 0 12px 32px -16px rgba(30, 60, 61, 0.12);
+  box-shadow: 0 1px 3px rgba(30, 60, 61, 0.04), 0 16px 36px -16px rgba(30, 60, 61, 0.1);
+}
+
+.card-warm {
+  background: linear-gradient(135deg, #ffffff 0%, #fffcf5 100%);
+  border: 1px solid rgba(245, 158, 11, 0.15);
+  box-shadow: 0 4px 20px -4px rgba(245, 158, 11, 0.12);
 }
 
 .tint {
-  background: linear-gradient(180deg, #f2faf9 0%, #e8f4f2 100%);
+  background: linear-gradient(180deg, #f7fcfa 0%, #faf8f2 50%, #f0f7f5 100%);
 }
 
 .grid-dots {
-  background-image: radial-gradient(rgba(5, 161, 143, 0.14) 1.5px, transparent 1.5px);
+  background-image: radial-gradient(rgba(5, 161, 143, 0.13) 1.5px, transparent 1.5px);
   background-size: 26px 26px;
 }
 
@@ -109,4 +174,19 @@ body {
 
 .fa-num {
   font-variant-numeric: tabular-nums;
+}
+
+/* Glassmorphism styles */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.78);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+}
+
+.glass-dark {
+  background: rgba(18, 40, 41, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
 }
