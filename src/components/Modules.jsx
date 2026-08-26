@@ -33,11 +33,10 @@ const modules = [
 
 export default function Modules() {
   return (
-    <section id="modules" className="relative bg-ink-900 py-24 lg:py-32">
-      <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-l from-transparent via-flame-500/40 to-transparent" />
+    <section id="modules" className="relative bg-white py-24 lg:py-32">
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
         <SectionTitle
-          eyebrow="ماژول‌های سیستم"
+          eyebrow="آنچه می‌سازیم"
           title="تمام زنجیره عملیات،"
           highlight="در یک بستر"
           desc="هر رویداد — از امضای قرارداد تا فروش — به همان محموله وصل می‌شود تا زنجیره از ابتدا تا گزارش نهایی قابل ردیابی بماند."
@@ -51,18 +50,18 @@ export default function Modules() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-60px" }}
               transition={{ duration: 0.6, delay: (i % 4) * 0.09 }}
-              whileHover={{ y: -6 }}
-              className="group relative overflow-hidden rounded-2xl border border-white/8 bg-ink-800/60 p-6 transition-colors duration-300 hover:border-flame-500/35"
+              whileHover={{ y: -7 }}
+              className="group card-soft relative overflow-hidden rounded-2xl p-6 transition-all duration-300 hover:border-brand-500/30 hover:shadow-xl hover:shadow-brand-500/12"
             >
-              <div className="absolute -left-8 -top-8 h-24 w-24 rounded-full bg-flame-500/0 blur-2xl transition-all duration-500 group-hover:bg-flame-500/15" />
-              <span className="absolute left-4 top-4 text-xs font-bold text-slate-600 fa-num transition-colors group-hover:text-flame-500/60">
+              <div className="absolute -left-10 -top-10 h-28 w-28 rounded-full bg-brand-500/0 blur-2xl transition-all duration-500 group-hover:bg-brand-500/15" />
+              <span className="absolute left-4 top-4 text-xs font-black text-brand-900/15 fa-num transition-colors group-hover:text-brand-500/50">
                 {faNum(String(i + 1).padStart(2, "0"))}
               </span>
-              <span className="mb-4 grid h-12 w-12 place-items-center rounded-xl bg-gradient-to-br from-flame-500/15 to-lagoon-500/15 ring-1 ring-white/10 transition-transform duration-300 group-hover:scale-110 group-hover:rotate-3">
-                <m.icon className="h-6 w-6 text-flame-400 transition-colors group-hover:text-flame-300" strokeWidth={1.8} />
+              <span className="mb-4 grid h-12 w-12 place-items-center rounded-xl bg-gradient-to-br from-brand-500/12 to-brand-400/8 ring-1 ring-brand-500/15 transition-transform duration-300 group-hover:scale-110 group-hover:rotate-3">
+                <m.icon className="h-6 w-6 text-brand-500 transition-colors group-hover:text-brand-600" strokeWidth={1.8} />
               </span>
-              <h3 className="text-lg font-bold text-white">{m.title}</h3>
-              <p className="mt-2 text-sm leading-7 text-slate-400">{m.desc}</p>
+              <h3 className="text-lg font-extrabold text-brand-900">{m.title}</h3>
+              <p className="mt-2 text-sm leading-7 text-brand-900/55">{m.desc}</p>
             </motion.div>
           ))}
         </div>

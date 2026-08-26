@@ -25,9 +25,9 @@ const steps = [
 
 export default function Workflow() {
   return (
-    <section id="workflow" className="relative overflow-hidden bg-ink-950 py-24 lg:py-32">
-      <div className="grid-lines absolute inset-0 opacity-60" />
-      <div className="absolute top-1/4 left-1/3 h-[380px] w-[380px] rounded-full bg-lagoon-500/8 blur-[130px]" />
+    <section id="workflow" className="tint relative overflow-hidden py-24 lg:py-32">
+      <div className="grid-lines absolute inset-0 opacity-50" />
+      <div className="absolute top-1/4 left-1/4 h-[360px] w-[360px] rounded-full bg-brand-400/10 blur-[120px]" />
 
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6">
         <SectionTitle
@@ -38,8 +38,7 @@ export default function Workflow() {
         />
 
         <div className="relative">
-          {/* connecting line */}
-          <div className="absolute right-[27px] top-0 bottom-0 hidden w-px bg-gradient-to-b from-flame-500/60 via-lagoon-500/40 to-transparent lg:right-1/2 lg:block" />
+          <div className="absolute right-[27px] top-0 bottom-0 hidden w-px bg-gradient-to-b from-brand-500/50 via-brand-400/30 to-transparent lg:right-1/2 lg:block" />
 
           <div className="space-y-8 lg:space-y-0">
             {steps.map((s, i) => {
@@ -47,11 +46,10 @@ export default function Workflow() {
               return (
                 <div
                   key={s.title}
-                  className={`relative flex lg:min-h-[130px] ${
+                  className={`relative flex lg:min-h-[128px] ${
                     isEven ? "lg:justify-start" : "lg:justify-end"
                   }`}
                 >
-                  {/* node */}
                   <motion.div
                     initial={{ scale: 0 }}
                     whileInView={{ scale: 1 }}
@@ -59,9 +57,9 @@ export default function Workflow() {
                     transition={{ duration: 0.5, delay: 0.15, ease: [0.34, 1.56, 0.64, 1] }}
                     className="absolute right-0 top-6 z-10 hidden lg:right-1/2 lg:block lg:translate-x-1/2"
                   >
-                    <span className="relative grid h-14 w-14 place-items-center rounded-2xl bg-ink-800 ring-1 ring-flame-500/40 shadow-lg shadow-flame-500/10">
-                      <span className="absolute inset-0 rounded-2xl bg-flame-500/20 animate-pulse-ring" />
-                      <span className="text-lg font-black text-flame-400 fa-num">{faNum(i + 1)}</span>
+                    <span className="relative grid h-14 w-14 place-items-center rounded-2xl bg-white ring-1 ring-brand-500/30 shadow-lg shadow-brand-500/15">
+                      <span className="absolute inset-0 rounded-2xl bg-brand-500/25 animate-pulse-ring" />
+                      <span className="text-lg font-black text-brand-500 fa-num">{faNum(i + 1)}</span>
                     </span>
                   </motion.div>
 
@@ -70,22 +68,20 @@ export default function Workflow() {
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true, margin: "-80px" }}
                     transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-                    className={`glass w-full rounded-2xl p-6 transition-colors hover:border-lagoon-400/30 lg:w-[calc(50%-3.5rem)] ${
-                      isEven ? "" : ""
-                    }`}
+                    className="card-soft w-full rounded-2xl p-6 transition-all hover:shadow-xl hover:shadow-brand-500/12 lg:w-[calc(50%-3.5rem)]"
                   >
                     <div className="flex items-start gap-4">
-                      <span className="grid h-12 w-12 shrink-0 place-items-center rounded-xl bg-gradient-to-br from-flame-500/20 to-lagoon-500/15 ring-1 ring-white/10">
-                        <s.icon className="h-6 w-6 text-lagoon-400" strokeWidth={1.8} />
+                      <span className="grid h-12 w-12 shrink-0 place-items-center rounded-xl bg-gradient-to-br from-brand-500/15 to-brand-400/8 ring-1 ring-brand-500/15">
+                        <s.icon className="h-6 w-6 text-brand-500" strokeWidth={1.8} />
                       </span>
                       <div>
                         <div className="flex items-center gap-3">
-                          <span className="text-sm font-black text-flame-500 fa-num lg:hidden">
+                          <span className="text-sm font-black text-brand-500 fa-num lg:hidden">
                             {faNum(String(i + 1).padStart(2, "0"))}
                           </span>
-                          <h3 className="text-lg font-bold text-white">{s.title}</h3>
+                          <h3 className="text-lg font-extrabold text-brand-900">{s.title}</h3>
                         </div>
-                        <p className="mt-2 text-sm leading-7 text-slate-400">{s.desc}</p>
+                        <p className="mt-2 text-sm leading-7 text-brand-900/55">{s.desc}</p>
                       </div>
                     </div>
                   </motion.div>

@@ -1,9 +1,10 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
-import { LayoutDashboard, FileBarChart2, CheckCircle2 } from "lucide-react";
+import { LayoutDashboard, FileBarChart2, Container, CheckCircle2 } from "lucide-react";
 import SectionTitle from "./SectionTitle";
-import dashboard from "../assets/dashboard-main.png";
+import dashboard from "../assets/dashboard-light.png";
 import report from "../assets/report-view.png";
+import tanks from "../assets/tanks-view.png";
 
 const tabs = [
   {
@@ -16,6 +17,18 @@ const tabs = [
       "پیگیری وضعیت تانکرها و محموله‌های در مسیر",
       "نمودار سود و زیان ماهانه با یک نگاه",
       "شاخص‌های کلیدی عملیات در بالای صفحه",
+    ],
+  },
+  {
+    id: "tanks",
+    icon: Container,
+    label: "مخازن و ذخیره‌سازی",
+    image: tanks,
+    points: [
+      "سطح لحظه‌ای هر مخزن با نشانگر گرافیکی",
+      "ثبت تخلیه و ورود محموله به مخزن",
+      "هشدار کمبود موجودی و ظرفیت",
+      "ردیابی کسری و افت در هر نقطه",
     ],
   },
   {
@@ -36,9 +49,8 @@ export default function Showcase() {
   const [active, setActive] = useState(tabs[0]);
 
   return (
-    <section id="showcase" className="relative overflow-hidden bg-ink-900 py-24 lg:py-32">
-      <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-l from-transparent via-lagoon-500/40 to-transparent" />
-      <div className="absolute -bottom-32 right-1/4 h-[400px] w-[400px] rounded-full bg-flame-500/10 blur-[140px]" />
+    <section id="showcase" className="relative overflow-hidden bg-white py-24 lg:py-32">
+      <div className="absolute -bottom-32 right-1/4 h-[380px] w-[380px] rounded-full bg-brand-400/10 blur-[130px]" />
 
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6">
         <SectionTitle
@@ -53,16 +65,14 @@ export default function Showcase() {
             <button
               key={t.id}
               onClick={() => setActive(t)}
-              className={`relative inline-flex items-center gap-2 rounded-2xl px-6 py-3.5 text-sm font-bold transition-all duration-300 ${
-                active.id === t.id
-                  ? "text-white"
-                  : "text-slate-400 hover:text-white"
+              className={`relative inline-flex items-center gap-2 rounded-2xl px-6 py-3.5 text-sm font-bold transition-colors duration-300 ${
+                active.id === t.id ? "text-white" : "text-brand-900/60 hover:text-brand-600"
               }`}
             >
               {active.id === t.id && (
                 <motion.span
                   layoutId="showcase-tab"
-                  className="absolute inset-0 rounded-2xl bg-gradient-to-l from-flame-500 to-flame-600 shadow-lg shadow-flame-500/25"
+                  className="absolute inset-0 rounded-2xl bg-gradient-to-l from-brand-500 to-brand-600 shadow-lg shadow-brand-500/25"
                   transition={{ type: "spring", bounce: 0.25, duration: 0.55 }}
                 />
               )}
@@ -82,11 +92,11 @@ export default function Showcase() {
               transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
               className="relative"
             >
-              <div className="absolute -inset-3 rounded-[2rem] bg-gradient-to-l from-lagoon-500/20 to-flame-500/20 blur-2xl" />
+              <div className="absolute -inset-3 rounded-[2rem] bg-gradient-to-l from-brand-400/15 to-brand-500/15 blur-2xl" />
               <img
                 src={active.image}
                 alt={active.label}
-                className="relative w-full rounded-2xl border border-white/12 shadow-2xl shadow-black/50"
+                className="relative w-full rounded-2xl border border-brand-900/10 shadow-2xl shadow-brand-900/15"
               />
             </motion.div>
           </AnimatePresence>
@@ -111,10 +121,10 @@ export default function Showcase() {
                         transition: { delay: 0.15 + i * 0.1, duration: 0.55 },
                       },
                     }}
-                    className="glass flex items-center gap-3 rounded-2xl p-4"
+                    className="card-soft flex items-center gap-3 rounded-2xl p-4"
                   >
-                    <CheckCircle2 className="h-5.5 w-5.5 shrink-0 text-lagoon-400" />
-                    <span className="text-[15px] font-medium leading-7 text-slate-200">{p}</span>
+                    <CheckCircle2 className="h-5.5 w-5.5 shrink-0 text-brand-500" />
+                    <span className="text-[15px] font-semibold leading-7 text-brand-900/80">{p}</span>
                   </motion.li>
                 ))}
               </motion.ul>
