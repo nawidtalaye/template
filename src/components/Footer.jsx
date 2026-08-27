@@ -1,17 +1,17 @@
-import { Flame, Phone, Mail, MapPin } from "lucide-react";
+import { Flame, Phone, Mail, MapPin, ExternalLink } from "lucide-react";
 import { faNum } from "../lib/utils";
 
 const productLinks = [
   { label: "ماژول‌های سیستم", href: "#modules" },
   { label: "مسیر کار", href: "#workflow" },
   { label: "نمای سیستم", href: "#showcase" },
-  { label: "چرا نفت‌یار", href: "#features" },
+  { label: "چرا نفت‌یار (داستان تحول)", href: "#features" },
 ];
 
 const companyLinks = [
-  { label: "مشتریان ما", href: "#testimonials" },
-  { label: "درخواست دمو", href: "#contact" },
-  { label: "تماس با ما", href: "#contact" },
+  { label: "مشتریان و نظرات", href: "#testimonials" },
+  { label: "درخواست جلسه دمو", href: "#contact" },
+  { label: "تماس با کارشناسان نواتیک", href: "#contact" },
 ];
 
 export default function Footer() {
@@ -21,26 +21,41 @@ export default function Footer() {
         <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-4">
           <div className="lg:col-span-2">
             <a href="#home" className="flex items-center gap-2.5">
-              <span className="grid h-11 w-11 place-items-center rounded-2xl bg-gradient-to-br from-brand-400 to-brand-600 shadow-lg shadow-brand-500/25">
-                <Flame className="h-5.5 w-5.5 text-white" strokeWidth={2.3} />
+              <span className="grid h-11 w-11 place-items-center rounded-2xl bg-gradient-to-br from-amber-400 via-orange-500 to-brand-600 shadow-lg shadow-amber-500/25">
+                <Flame className="h-6 w-6 text-white" strokeWidth={2.3} />
               </span>
               <span>
-                <span className="block text-xl font-black text-white">نفت‌یار</span>
-                <span className="block text-xs text-brand-100/60">سامانه مدیریت نفت و گاز</span>
+                <span className="block text-xl font-black text-white">
+                  نفت<span className="text-amber-400">یار</span>
+                </span>
+                <span className="block text-xs text-brand-100/60 font-semibold">
+                  سامانه مدیریت و عملیات نفت و گاز
+                </span>
               </span>
             </a>
-            <p className="mt-5 max-w-md leading-8 text-brand-100/60">
+            <p className="mt-5 max-w-md leading-8 text-sm text-brand-100/70">
               نرم‌افزار اختصاصی مدیریت عملیات شرکت‌های واردکننده و توزیع‌کننده مواد نفتی؛
               از قرارداد و بارگیری تا مخزن، فروش، مصارف و گزارش سود و زیان هر محموله.
             </p>
+            <div className="mt-4">
+              <a
+                href="https://novatechsoft.com"
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-1.5 text-xs font-bold text-amber-400 hover:text-amber-300 transition"
+              >
+                <span>طراحی و توسعه توسط شرکت نرم‌افزاری نواتیک</span>
+                <ExternalLink className="h-3 w-3" />
+              </a>
+            </div>
           </div>
 
           <div>
-            <h4 className="mb-4 font-black text-white">محصول</h4>
-            <ul className="space-y-3">
+            <h4 className="mb-4 font-black text-white text-base">ماژول‌ها و بخش‌ها</h4>
+            <ul className="space-y-3 text-sm">
               {productLinks.map((l) => (
                 <li key={l.label}>
-                  <a href={l.href} className="text-brand-100/60 transition hover:text-brand-400">
+                  <a href={l.href} className="text-brand-100/70 transition hover:text-amber-400">
                     {l.label}
                   </a>
                 </li>
@@ -49,34 +64,34 @@ export default function Footer() {
           </div>
 
           <div>
-            <h4 className="mb-4 font-black text-white">ارتباط با ما</h4>
-            <ul className="space-y-3 text-brand-100/60">
+            <h4 className="mb-4 font-black text-white text-base">ارتباط و استقرار</h4>
+            <ul className="space-y-3 text-sm text-brand-100/70">
               {companyLinks.map((l) => (
                 <li key={l.label}>
-                  <a href={l.href} className="transition hover:text-brand-400">
+                  <a href={l.href} className="transition hover:text-amber-400">
                     {l.label}
                   </a>
                 </li>
               ))}
-              <li className="flex items-center gap-2 pt-1">
-                <Phone className="h-4 w-4 text-brand-400" />
-                <span className="fa-num" style={{ direction: "ltr" }}>+۹۳ ۷۰ ۰۰۰ ۰۰۰۰</span>
+              <li className="flex items-center gap-2 pt-1 text-white">
+                <Phone className="h-4 w-4 text-amber-400" />
+                <span className="fa-num font-bold" style={{ direction: "ltr" }}>+۹۳ ۷۰ ۲ ۰۰ ۸۴ ۵۴</span>
               </li>
               <li className="flex items-center gap-2">
-                <Mail className="h-4 w-4 text-brand-400" />
-                <span style={{ direction: "ltr" }}>info@naftyar.com</span>
+                <Mail className="h-4 w-4 text-amber-400" />
+                <span style={{ direction: "ltr" }}>info@novatechsoft.com</span>
               </li>
               <li className="flex items-center gap-2">
-                <MapPin className="h-4 w-4 text-brand-400" />
-                هرات، افغانستان
+                <MapPin className="h-4 w-4 text-amber-400" />
+                هرات، افغانستان — شرکت نواتیک
               </li>
             </ul>
           </div>
         </div>
 
-        <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-white/10 pt-8 text-sm text-brand-100/45 sm:flex-row">
-          <p className="fa-num">© {faNum(1404)} نفت‌یار — تمامی حقوق محفوظ است.</p>
-          <p>ساخته‌شده با دقت برای صنعت نفت و گاز</p>
+        <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-white/10 pt-8 text-xs text-brand-100/50 sm:flex-row">
+          <p className="fa-num">© {faNum(1404)} نفت‌یار • شرکت تکنالوژی و نرم‌افزاری نواتیک. تمامی حقوق محفوظ است.</p>
+          <p>سیستم اختصاصی شرکت‌های واردات و توزیع سوخت</p>
         </div>
       </div>
     </footer>
