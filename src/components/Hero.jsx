@@ -66,7 +66,7 @@ export default function Hero() {
         )}
 
         {/* لایه سفید ملایم برای خوانایی متون بدون محو شدن ویدیو */}
-        <div className="absolute inset-0 bg-gradient-to-b from-white/85 via-white/60 to-white" />
+        <div className="absolute inset-0 bg-gradient-to-b from-white/40 via-white/20 to-white/70" />
         <div className="absolute inset-0 [background:radial-gradient(ellipse_60%_50%_at_50%_35%,rgba(255,255,255,0.55),transparent_70%)]" />
       </div>
 
