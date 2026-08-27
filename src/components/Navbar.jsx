@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
-import { Menu, X, Flame, PhoneCall, Headset, Sparkles } from "lucide-react";
+import { Menu, X, Flame, PhoneCall, Headset } from "lucide-react";
 
 const links = [
   { href: "#home", label: "صفحه اصلی" },
@@ -29,7 +29,7 @@ export default function Navbar() {
       transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
       className="fixed inset-x-0 top-0 z-50"
     >
-      {/* نوار پشتیبانی بالا — مشابه نواتیک با رنگ‌های پرانرژی */}
+      {/* نوار پشتیبانی بالا */}
       <div
         className={`overflow-hidden bg-brand-950 text-white transition-all duration-500 ${
           scrolled ? "max-h-0" : "max-h-12"
@@ -38,7 +38,7 @@ export default function Navbar() {
         <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-2 text-[13px] sm:px-6">
           <div className="flex items-center gap-2">
             <span className="h-1.5 w-1.5 rounded-full bg-amber-400 animate-pulse" />
-            <span className="hidden text-brand-100/85 sm:block font-medium">
+            <span className="hidden font-medium text-brand-100/85 sm:block">
               سامانه ابری مدیریت و حسابداری شرکت‌های نفت و گاز نواتیک
             </span>
           </div>
@@ -56,25 +56,21 @@ export default function Navbar() {
       <div
         className={`transition-all duration-500 ${
           scrolled
-            ? "border-b border-brand-900/10 bg-white/95 shadow-lg shadow-brand-900/5 backdrop-blur-xl"
-            : "bg-white/80 backdrop-blur-md"
+            ? "border-b border-brand-900/10 bg-white/95 shadow-lg shadow-brand-950/5 backdrop-blur-xl"
+            : "bg-white/85 backdrop-blur-md"
         }`}
       >
         <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-3.5 sm:px-6">
-          {/* لوگو نفت‌یار با مشعل آتش و انرژی گرم */}
+          {/* لوگو نفت‌یار — آکنت واحد گرم روی آبی برند */}
           <a href="#home" className="flex items-center gap-2.5">
-            <span className="relative grid h-11 w-11 place-items-center rounded-2xl bg-gradient-to-br from-amber-400 via-orange-500 to-brand-600 shadow-lg shadow-amber-500/25">
-              <Flame className="h-6 w-6 text-white drop-shadow-sm" strokeWidth={2.3} />
-              <span className="absolute -top-1 -right-1 flex h-3 w-3">
-                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-amber-400 opacity-75" />
-                <span className="relative inline-flex h-3 w-3 rounded-full bg-amber-400" />
-              </span>
+            <span className="relative grid h-11 w-11 place-items-center rounded-2xl bg-brand-600 shadow-lg shadow-brand-600/25">
+              <Flame className="h-6 w-6 text-amber-400 drop-shadow-sm" strokeWidth={2.3} />
             </span>
             <span className="leading-tight">
-              <span className="block text-xl font-black text-brand-900">
-                نفت<span className="text-amber-500">یار</span>
+              <span className="block text-xl font-black text-brand-950">
+                نفت<span className="text-brand-500">یار</span>
               </span>
-              <span className="block text-[11px] font-bold text-brand-900/60">
+              <span className="block text-[11px] font-bold text-brand-900/55">
                 سامانه هوشمند نفت و گاز
               </span>
             </span>
@@ -86,7 +82,7 @@ export default function Navbar() {
               <a
                 key={l.href}
                 href={l.href}
-                className="relative rounded-xl px-3.5 py-2 text-[14px] font-bold text-brand-900/75 transition-colors hover:text-amber-600 after:absolute after:bottom-0.5 after:right-3.5 after:left-3.5 after:h-0.5 after:origin-right after:scale-x-0 after:rounded-full after:bg-amber-500 after:transition-transform after:duration-300 hover:after:scale-x-100"
+                className="relative rounded-xl px-3.5 py-2 text-[14px] font-bold text-brand-900/75 transition-colors hover:text-brand-600 after:absolute after:bottom-0.5 after:right-3.5 after:left-3.5 after:h-0.5 after:origin-right after:scale-x-0 after:rounded-full after:bg-brand-500 after:transition-transform after:duration-300 hover:after:scale-x-100"
               >
                 {l.label}
               </a>
@@ -97,11 +93,11 @@ export default function Navbar() {
           <div className="hidden lg:block">
             <a
               href="#contact"
-              className="group relative inline-flex items-center gap-2 overflow-hidden rounded-xl bg-gradient-to-l from-amber-500 via-orange-500 to-brand-600 px-5 py-2.5 text-sm font-black text-white shadow-lg shadow-amber-500/25 transition-transform hover:scale-[1.03] active:scale-95"
+              className="group relative inline-flex items-center gap-2 overflow-hidden rounded-xl bg-brand-600 px-5 py-2.5 text-sm font-black text-white shadow-lg shadow-brand-600/25 transition-all hover:bg-brand-700 active:scale-95"
             >
               <PhoneCall className="h-4 w-4" />
               ثبت سفارش دمو
-              <span className="absolute inset-0 -translate-x-full bg-gradient-to-l from-transparent via-white/30 to-transparent transition-transform duration-700 group-hover:translate-x-full" />
+              <span className="absolute inset-0 -translate-x-full bg-gradient-to-l from-transparent via-white/20 to-transparent transition-transform duration-700 group-hover:translate-x-full" />
             </a>
           </div>
 
@@ -130,7 +126,7 @@ export default function Navbar() {
                     key={l.href}
                     href={l.href}
                     onClick={() => setOpen(false)}
-                    className="rounded-xl px-4 py-3 text-sm font-bold text-brand-900/80 transition hover:bg-brand-50 hover:text-amber-600"
+                    className="rounded-xl px-4 py-3 text-sm font-bold text-brand-900/80 transition hover:bg-brand-50 hover:text-brand-600"
                   >
                     {l.label}
                   </a>
@@ -138,7 +134,7 @@ export default function Navbar() {
                 <a
                   href="#contact"
                   onClick={() => setOpen(false)}
-                  className="mt-2 rounded-xl bg-gradient-to-l from-amber-500 via-orange-500 to-brand-600 px-4 py-3 text-center font-black text-white shadow-lg"
+                  className="mt-2 rounded-xl bg-brand-600 px-4 py-3 text-center font-black text-white shadow-lg"
                 >
                   ثبت سفارش دمو
                 </a>

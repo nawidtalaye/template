@@ -7,20 +7,14 @@ import {
   BarChart3,
   CheckCircle2,
   AlertTriangle,
-  ArrowDown,
   Sparkles,
   Quote,
-  ShieldCheck,
-  Zap,
-  TrendingUp,
-  Cpu,
 } from "lucide-react";
 import SectionTitle from "./SectionTitle";
 import Reveal from "./Reveal";
 import CountUp from "./CountUp";
-import { faNum } from "../lib/utils";
 
-// ۴ گام داستانی تحول نفت‌یار مشابه ساختار «داستان نواتیک» در novatechsoft.com/about
+/* ۴ گام داستان — همگی در رنگ برند، تنها دو رنگ معنایی قرمز/سبز برای چالش و راهکار */
 const storySteps = [
   {
     step: "۰۱",
@@ -28,11 +22,6 @@ const storySteps = [
     title: "بحران دفاتر کاغذی و خطاهای اکسل",
     subtitle: "شروع نیاز به تحول و ثبت داده‌های مطمئن",
     icon: FileSpreadsheet,
-    accent: "from-amber-400 to-orange-500",
-    color: "text-amber-500",
-    bgColor: "bg-amber-500/10",
-    borderColor: "border-amber-500/30",
-    glowColor: "shadow-amber-500/20",
     problem:
       "بارنامه‌ها به صورت دستی و پراکنده ثبت می‌شد؛ محاسبه نرخ تبدیل ارزها با خطای انسانی همراه بود و بستن حساب یک محموله هفته‌ها طول می‌کشید.",
     solution:
@@ -45,11 +34,6 @@ const storySteps = [
     title: "تولد هسته یکپارچه ردیابی محموله",
     subtitle: "شناسه یکتا برای هر قطره سوخت از مبدا تا مقصد",
     icon: Truck,
-    accent: "from-sky-400 to-blue-600",
-    color: "text-sky-500",
-    bgColor: "bg-sky-500/10",
-    borderColor: "border-sky-500/30",
-    glowColor: "shadow-sky-500/20",
     problem:
       "افت و کسری بار در طول مسیر از مرزهای ترکمنستان و ایران مشخص نبود و همیشه بین راننده‌ها، گمرک و صاحبان بار تنش و اختلاف ایجاد می‌شد.",
     solution:
@@ -62,11 +46,6 @@ const storySteps = [
     title: "مانیتورینگ زنده مخازن و تسویه چند ارزی",
     subtitle: "کنترل مخازن و محاسبه سهم شرکا در لحظه",
     icon: Container,
-    accent: "from-violet-400 to-indigo-600",
-    color: "text-violet-500",
-    bgColor: "bg-violet-500/10",
-    borderColor: "border-violet-500/30",
-    glowColor: "shadow-violet-500/20",
     problem:
       "نوسان شدید نرخ دالر، تومان و افغانی باعث ضرر در قیمت‌گذاری می‌شد و محاسبه سهم شرکا به دلیل تعدد هزینه‌های مسیر پر از ابهام بود.",
     solution:
@@ -79,11 +58,6 @@ const storySteps = [
     title: "اکوسیستم جامع هوش تجاری و سود قطعی",
     subtitle: "سامانه پیشرفته تصمیم‌گیری مدیران نفت و گاز",
     icon: BarChart3,
-    accent: "from-emerald-400 to-teal-600",
-    color: "text-emerald-500",
-    bgColor: "bg-emerald-500/10",
-    borderColor: "border-emerald-500/30",
-    glowColor: "shadow-emerald-500/20",
     problem:
       "مدیران برای دانستن سود و زیان واقعی باید تا پایان سال مالی منتظر می‌ماندند و نمی‌توانستند برای خریدهای بعدی سریع تصمیم بگیرند.",
     solution:
@@ -99,13 +73,7 @@ export default function Features() {
     <section id="features" className="tint relative overflow-hidden py-24 lg:py-32">
       <div className="grid-dots absolute inset-0 opacity-40" />
 
-      {/* هاله‌های نوری پس‌زمینه با ترکیب رنگ‌های گرم و انرژی‌بخش */}
-      <div className="absolute top-20 right-10 h-96 w-96 rounded-full bg-amber-400/15 blur-[140px]" />
-      <div className="absolute bottom-20 left-10 h-96 w-96 rounded-full bg-brand-400/20 blur-[140px]" />
-      <div className="absolute top-1/2 left-1/3 h-80 w-80 rounded-full bg-indigo-400/10 blur-[130px]" />
-
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6">
-        {/* تیتر بخش با امضای معروف نواتیک */}
         <SectionTitle
           eyebrow="داستان نفت‌یار • چرا به این سامانه نیاز دارید؟"
           title="مسیر تحول شرکت‌های نفت و گاز،"
@@ -113,34 +81,23 @@ export default function Features() {
           desc="دقیقاً مانند مسیر توسعه نواتیک، نفت‌یار مرحله به مرحله از دل چالش‌های واقعی صنعت سوخت متولد شد تا هر قطره سرمایه شما را شفاف کند."
         />
 
-        {/* خط سیر داستانی با انیمیشن خفن ذرات نوری و فلش‌های متصل‌کننده (مشابه arrow-dotted نواتیک) */}
         <div className="relative mt-16">
-          {/* مسیر اتصال دسکتاپ: فلش‌های خط‌چینی متحرک با جریان پالس */}
+          {/* مسیر اتصال دسکتاپ — خط‌چین تک‌رنگ */}
           <div className="pointer-events-none absolute top-28 right-[12%] left-[12%] z-0 hidden lg:block">
             <svg className="h-10 w-full overflow-visible" preserveAspectRatio="none">
-              <defs>
-                <linearGradient id="flow-line" x1="100%" y1="0%" x2="0%" y2="0%">
-                  <stop offset="0%" stopColor="#f59e0b" />
-                  <stop offset="33%" stopColor="#0ea5e9" />
-                  <stop offset="66%" stopColor="#8b5cf6" />
-                  <stop offset="100%" stopColor="#10b981" />
-                </linearGradient>
-              </defs>
-              {/* خط‌چین اصلی */}
               <line
                 x1="0%"
                 y1="50%"
                 x2="100%"
                 y2="50%"
-                stroke="url(#flow-line)"
+                stroke="#3b7cd8"
                 strokeWidth="3"
                 strokeDasharray="8 8"
-                className="opacity-45"
+                className="opacity-30"
               />
             </svg>
           </div>
 
-          {/* کارت‌های ۴ گانه داستان نواتیک */}
           <div className="relative z-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
             {storySteps.map((s, i) => {
               const Icon = s.icon;
@@ -157,56 +114,51 @@ export default function Features() {
                   onClick={() => setSelectedStep(i)}
                   className={`group card-soft relative flex cursor-pointer flex-col justify-between overflow-hidden rounded-3xl p-7 transition-all duration-300 ${
                     isSelected
-                      ? `border-2 ring-4 ring-white ${s.borderColor} shadow-2xl ${s.glowColor}`
-                      : "hover:border-brand-500/30 hover:shadow-xl"
+                      ? "border-2 border-brand-500/50 ring-4 ring-white shadow-2xl shadow-brand-500/15"
+                      : "hover:border-brand-300 hover:shadow-xl"
                   }`}
                 >
                   {/* خط بالای کارت */}
                   <div
-                    className={`absolute top-0 right-0 left-0 h-1.5 bg-gradient-to-l ${s.accent}`}
+                    className={`absolute top-0 right-0 left-0 h-1.5 bg-brand-500 transition-opacity ${
+                      isSelected ? "opacity-100" : "opacity-40"
+                    }`}
                   />
 
                   <div>
-                    {/* ردیف بالا: آیکون و نشانگر سال */}
                     <div className="flex items-center justify-between">
                       <div className="relative">
-                        <span
-                          className={`grid h-14 w-14 place-items-center rounded-2xl bg-gradient-to-br ${s.accent} text-white shadow-lg shadow-black/10 transition-transform duration-300 group-hover:scale-110 group-hover:rotate-3`}
-                        >
+                        <span className="grid h-14 w-14 place-items-center rounded-2xl bg-brand-500/10 text-brand-600 transition-transform duration-300 group-hover:scale-110">
                           <Icon className="h-7 w-7" />
                         </span>
-                        {/* شماره گام به صورت پالس بر روی آیکون */}
                         <span className="absolute -bottom-2 -left-2 grid h-6 w-6 place-items-center rounded-full bg-brand-900 text-xs font-black text-white shadow fa-num">
                           {s.step}
                         </span>
                       </div>
 
-                      <span
-                        className={`rounded-xl px-3 py-1 text-xs font-black fa-num ${s.bgColor} ${s.color} ring-1 ring-inset ${s.borderColor}`}
-                      >
+                      <span className="rounded-xl bg-brand-50 px-3 py-1 text-xs font-black text-brand-700 ring-1 ring-inset ring-brand-500/20 fa-num">
                         {s.year}
                       </span>
                     </div>
 
-                    {/* عنوان مرحله */}
-                    <h3 className="mt-6 text-lg font-black text-brand-900 group-hover:text-brand-700">
+                    <h3 className="mt-6 text-lg font-black text-brand-950 group-hover:text-brand-600">
                       {s.title}
                     </h3>
                     <p className="mt-1 text-xs font-bold text-brand-900/50">{s.subtitle}</p>
 
                     <div className="my-4 border-t border-brand-900/8" />
 
-                    {/* مقایسه چالش و راهکار */}
+                    {/* مقایسه چالش و راهکار — دو رنگ معنایی آرام */}
                     <div className="space-y-3">
-                      <div className="rounded-xl bg-red-50/70 p-3 text-xs leading-6 text-red-900/80">
-                        <div className="mb-1 flex items-center gap-1.5 font-black text-red-600">
+                      <div className="rounded-xl bg-rose-500/5 p-3 text-xs leading-6 text-brand-900/75">
+                        <div className="mb-1 flex items-center gap-1.5 font-black text-rose-600">
                           <AlertTriangle className="h-3.5 w-3.5 shrink-0" />
                           <span>چالش پیش از نفت‌یار:</span>
                         </div>
                         {s.problem}
                       </div>
 
-                      <div className="rounded-xl bg-emerald-50/80 p-3 text-xs leading-6 text-emerald-950">
+                      <div className="rounded-xl bg-emerald-500/5 p-3 text-xs leading-6 text-brand-900/80">
                         <div className="mb-1 flex items-center gap-1.5 font-black text-emerald-600">
                           <CheckCircle2 className="h-3.5 w-3.5 shrink-0" />
                           <span>راهکار نفت‌یار:</span>
@@ -216,14 +168,13 @@ export default function Features() {
                     </div>
                   </div>
 
-                  {/* نوار پایین: شاخص نتیجه و نشانگر انتخاب */}
                   <div className="mt-5 flex items-center justify-between border-t border-brand-900/8 pt-3">
                     <span className="text-[11px] font-black text-brand-900/70 fa-num">
                       ✨ {s.metric}
                     </span>
                     <span
                       className={`h-2 w-2 rounded-full ${
-                        isSelected ? "bg-amber-500 animate-ping" : "bg-brand-900/20"
+                        isSelected ? "bg-brand-500" : "bg-brand-900/20"
                       }`}
                     />
                   </div>
@@ -233,7 +184,7 @@ export default function Features() {
           </div>
         </div>
 
-        {/* پنل جزئیات عمیق تحول انتخابی با انیمیشن مدرن */}
+        {/* پنل جزئیات عمیق گام انتخاب‌شده */}
         <div className="mx-auto mt-12 max-w-4xl">
           <AnimatePresence mode="wait">
             <motion.div
@@ -244,22 +195,18 @@ export default function Features() {
               transition={{ duration: 0.4 }}
               className="card-soft relative overflow-hidden rounded-3xl border border-brand-900/10 p-6 sm:p-8"
             >
-              <div
-                className={`absolute top-0 right-0 left-0 h-1.5 bg-gradient-to-l ${storySteps[selectedStep].accent}`}
-              />
+              <div className="absolute top-0 right-0 left-0 h-1.5 bg-brand-500" />
 
               <div className="flex flex-wrap items-center justify-between gap-4 border-b border-brand-900/8 pb-4">
                 <div className="flex items-center gap-3">
-                  <span
-                    className={`grid h-11 w-11 place-items-center rounded-xl bg-gradient-to-br ${storySteps[selectedStep].accent} text-white shadow`}
-                  >
+                  <span className="grid h-11 w-11 place-items-center rounded-xl bg-brand-500/10 text-brand-600">
                     <Sparkles className="h-5 w-5" />
                   </span>
                   <div>
-                    <span className="text-xs font-black text-brand-500">
+                    <span className="text-xs font-black text-brand-600">
                       بررسی عمیق گام {storySteps[selectedStep].step} ({storySteps[selectedStep].year})
                     </span>
-                    <h4 className="text-lg font-black text-brand-900">
+                    <h4 className="text-lg font-black text-brand-950">
                       {storySteps[selectedStep].title}
                     </h4>
                   </div>
@@ -271,8 +218,8 @@ export default function Features() {
               </div>
 
               <div className="mt-5 grid gap-6 sm:grid-cols-2">
-                <div className="rounded-2xl border border-red-500/20 bg-red-50/40 p-4">
-                  <h5 className="flex items-center gap-2 font-black text-red-700">
+                <div className="rounded-2xl border border-rose-500/15 bg-rose-500/5 p-4">
+                  <h5 className="flex items-center gap-2 font-black text-rose-600">
                     <AlertTriangle className="h-4 w-4" />
                     وضعیت سنتی و خطرات آن
                   </h5>
@@ -281,8 +228,8 @@ export default function Features() {
                   </p>
                 </div>
 
-                <div className="rounded-2xl border border-emerald-500/20 bg-emerald-50/50 p-4">
-                  <h5 className="flex items-center gap-2 font-black text-emerald-700">
+                <div className="rounded-2xl border border-emerald-500/15 bg-emerald-500/5 p-4">
+                  <h5 className="flex items-center gap-2 font-black text-emerald-600">
                     <CheckCircle2 className="h-4 w-4" />
                     دست‌آورد سامانه هوشمند نفت‌یار
                   </h5>
@@ -295,11 +242,11 @@ export default function Features() {
           </AnimatePresence>
         </div>
 
-        {/* سخن مدیر عامل — اقتباس مستقیم از بخش quote نواتیک */}
+        {/* سخن مدیرعامل */}
         <Reveal delay={0.2} className="mt-20">
-          <div className="relative mx-auto max-w-3xl overflow-hidden rounded-3xl bg-brand-900 p-8 text-center text-white shadow-2xl shadow-brand-900/30 sm:p-12">
-            <div className="absolute -left-12 -top-12 h-48 w-48 rounded-full bg-amber-400/20 blur-3xl" />
-            <div className="absolute -right-12 -bottom-12 h-48 w-48 rounded-full bg-brand-500/25 blur-3xl" />
+          <div className="relative mx-auto max-w-3xl overflow-hidden rounded-3xl bg-brand-950 p-8 text-center text-white shadow-2xl shadow-brand-950/30 sm:p-12">
+            <div className="absolute -left-12 -top-12 h-48 w-48 rounded-full bg-amber-400/15 blur-3xl" />
+            <div className="absolute -right-12 -bottom-12 h-48 w-48 rounded-full bg-brand-500/20 blur-3xl" />
 
             <div className="relative z-10">
               <Quote className="mx-auto h-11 w-11 text-amber-400" />
@@ -317,20 +264,18 @@ export default function Features() {
           </div>
         </Reveal>
 
-        {/* شمارنده‌های بزرگ با رنگ‌های پرانرژی مشابه بخش آمار نواتیک */}
+        {/* شمارنده‌های کلیدی — منسجم و تک‌رنگ */}
         <div className="mx-auto mt-16 grid max-w-3xl grid-cols-2 gap-6 sm:grid-cols-3">
           {[
-            { value: 12, label: "ماژول یکپارچه عملیاتی", color: "from-amber-500 to-orange-500" },
-            { value: 40, label: "شرکت فعال در صنعت نفت", suffix: "+", color: "from-brand-500 to-teal-500" },
-            { value: 99, label: "دقت محاسبات و افت مخازن", suffix: "٪", color: "from-emerald-500 to-green-600" },
+            { value: 12, suffix: "", label: "ماژول یکپارچه عملیاتی" },
+            { value: 40, suffix: "+", label: "شرکت فعال در صنعت نفت" },
+            { value: 99, suffix: "٪", label: "دقت محاسبات و افت مخازن" },
           ].map((s, i) => (
             <Reveal key={s.label} delay={i * 0.12}>
-              <div className="card-soft rounded-2xl p-6 text-center shadow-sm transition-all hover:shadow-md">
-                <div className="text-4xl font-black text-brand-900 sm:text-5xl">
+              <div className="card-soft rounded-2xl p-6 text-center shadow-sm transition-all hover:border-brand-300 hover:shadow-md">
+                <div className="text-4xl font-black text-brand-950 sm:text-5xl">
                   <CountUp to={s.value} />
-                  <span className={`bg-gradient-to-l ${s.color} bg-clip-text text-transparent`}>
-                    {s.suffix && faNum(s.suffix)}
-                  </span>
+                  <span className="text-brand-600">{s.suffix}</span>
                 </div>
                 <div className="mt-2 text-xs font-bold text-brand-900/60 sm:text-sm">{s.label}</div>
               </div>

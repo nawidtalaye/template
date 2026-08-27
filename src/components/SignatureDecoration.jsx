@@ -1,4 +1,4 @@
-export default function SignatureDecoration({ className = "mx-auto my-3 text-brand-500" }) {
+export default function SignatureDecoration({ className = "mx-auto my-3" }) {
   return (
     <div className={`relative flex items-center justify-center ${className}`}>
       <svg
@@ -24,13 +24,12 @@ export default function SignatureDecoration({ className = "mx-auto my-3 text-bra
         <circle cx="157" cy="5" r="2.5" fill="#f59e0b" />
         <defs>
           <linearGradient id="sig-grad" x1="0%" y1="0%" x2="100%" y2="0%">
-            <stop offset="0%" stopColor="#05a18f" />
-            <stop offset="50%" stopColor="#f59e0b" />
-            <stop offset="100%" stopColor="#f97316" />
+            <stop offset="0%" stopColor="#275fc0" />
+            <stop offset="100%" stopColor="#0ea5e9" />
           </linearGradient>
           <linearGradient id="sig-grad-2" x1="0%" y1="0%" x2="100%" y2="0%">
-            <stop offset="0%" stopColor="#05a18f" stopOpacity="0.4" />
-            <stop offset="100%" stopColor="#f59e0b" stopOpacity="0.9" />
+            <stop offset="0%" stopColor="#275fc0" stopOpacity="0.4" />
+            <stop offset="100%" stopColor="#0ea5e9" stopOpacity="0.9" />
           </linearGradient>
         </defs>
       </svg>
