@@ -25,7 +25,7 @@ export default function Clients() {
         />
       </div>
 
-      {/* مارکی — دقیقاً مثل ردیف لوگوهای مشتریان نواتیک */}
+      {/* مارکی لوگوهای مشتریان — منسجم و تک‌رنگ */}
       <div className="relative space-y-5 overflow-hidden [mask-image:linear-gradient(to_left,transparent,black_10%,black_90%,transparent)]">
         <div className="flex w-max animate-marquee gap-5" style={{ direction: "ltr" }}>
           {[...clients, ...clients].map((c, i) => (
@@ -34,8 +34,8 @@ export default function Clients() {
               className="card-soft flex items-center gap-3 rounded-2xl px-8 py-4 whitespace-nowrap"
               style={{ direction: "rtl" }}
             >
-              <span className="grid h-9 w-9 place-items-center rounded-lg bg-brand-500/10">
-                <img src="logos/image1.png" alt="Logo" />
+              <span className="grid h-9 w-9 place-items-center rounded-lg bg-brand-500/10 text-brand-600">
+                <Building2 className="h-5 w-5" />
               </span>
               <span className="font-bold text-brand-900/80">{c}</span>
             </div>
@@ -51,8 +51,8 @@ export default function Clients() {
               className="flex items-center gap-3 rounded-2xl border border-brand-500/15 bg-white/70 px-8 py-4 whitespace-nowrap"
               style={{ direction: "rtl" }}
             >
-              <span className="grid h-9 w-9 place-items-center rounded-lg bg-brand-500/10">
-                <img src="logos/image1.png" alt="" />
+              <span className="grid h-9 w-9 place-items-center rounded-lg bg-brand-500/10 text-brand-600">
+                <Building2 className="h-5 w-5" />
               </span>
               <span className="font-bold text-brand-900/60">{c}</span>
             </div>

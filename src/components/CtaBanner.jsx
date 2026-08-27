@@ -1,16 +1,16 @@
 import { motion } from "motion/react";
-import { ArrowLeft, PhoneCall, Sparkles } from "lucide-react";
+import { ArrowLeft, PhoneCall } from "lucide-react";
 import agent from "../assets/support-agent.png";
 
 export default function CtaBanner() {
   return (
     <section className="relative overflow-hidden bg-brand-950 py-16 lg:py-0">
-      <div className="grid-lines absolute inset-0 opacity-20" />
-      <div className="absolute -left-16 top-0 h-80 w-80 rounded-full bg-amber-400/15 blur-3xl" />
-      <div className="absolute -right-16 bottom-0 h-80 w-80 rounded-full bg-brand-500/20 blur-3xl" />
+      <div className="grid-lines absolute inset-0 opacity-15" />
+      <div className="absolute -left-16 top-0 h-80 w-80 rounded-full bg-amber-400/10 blur-3xl" />
+      <div className="absolute -right-16 bottom-0 h-80 w-80 rounded-full bg-brand-500/15 blur-3xl" />
 
       <div className="relative mx-auto grid max-w-6xl items-center gap-10 px-4 sm:px-6 lg:grid-cols-[320px_1fr_auto] lg:gap-14">
-        {/* کارشناس پشتیبانی — اقتباس از نواتیک */}
+        {/* کارشناس پشتیبانی */}
         <motion.div
           initial={{ opacity: 0, y: 60 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -18,7 +18,7 @@ export default function CtaBanner() {
           transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
           className="relative mx-auto hidden self-end lg:block"
         >
-          <div className="relative h-80 w-72 overflow-hidden rounded-t-[9rem] bg-gradient-to-t from-brand-100 to-white shadow-2xl shadow-amber-500/15 ring-4 ring-amber-400/30">
+          <div className="relative h-80 w-72 overflow-hidden rounded-t-[9rem] bg-gradient-to-t from-brand-100 to-white shadow-2xl shadow-black/20 ring-4 ring-brand-500/20">
             <img
               src={agent}
               alt="کارشناس پشتیبانی نفت‌یار نواتیک"
@@ -57,11 +57,11 @@ export default function CtaBanner() {
         >
           <a
             href="#contact"
-            className="group relative inline-flex items-center gap-2 overflow-hidden rounded-2xl bg-gradient-to-l from-amber-400 via-orange-500 to-amber-500 px-9 py-4.5 text-base font-black text-brand-950 shadow-2xl shadow-amber-500/30 transition-transform hover:scale-[1.05] active:scale-95"
+            className="group relative inline-flex items-center gap-2 overflow-hidden rounded-2xl bg-amber-400 px-9 py-4.5 text-base font-black text-brand-950 shadow-2xl shadow-amber-500/25 transition-all hover:bg-amber-300 active:scale-95"
           >
             همین حالا اقدام کنید
             <ArrowLeft className="h-5 w-5 transition-transform group-hover:-translate-x-1" />
-            <span className="absolute inset-0 -translate-x-full bg-gradient-to-l from-transparent via-white/35 to-transparent transition-transform duration-700 group-hover:translate-x-full" />
+            <span className="absolute inset-0 -translate-x-full bg-gradient-to-l from-transparent via-white/30 to-transparent transition-transform duration-700 group-hover:translate-x-full" />
           </a>
         </motion.div>
       </div>

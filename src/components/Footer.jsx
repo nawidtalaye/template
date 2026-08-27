@@ -21,19 +21,19 @@ export default function Footer() {
         <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-4">
           <div className="lg:col-span-2">
             <a href="#home" className="flex items-center gap-2.5">
-              <span className="grid h-11 w-11 place-items-center rounded-2xl bg-gradient-to-br from-amber-400 via-orange-500 to-brand-600 shadow-lg shadow-amber-500/25">
-                <Flame className="h-6 w-6 text-white" strokeWidth={2.3} />
+              <span className="grid h-11 w-11 place-items-center rounded-2xl bg-brand-600 shadow-lg shadow-black/20">
+                <Flame className="h-6 w-6 text-amber-400" strokeWidth={2.3} />
               </span>
               <span>
                 <span className="block text-xl font-black text-white">
                   نفت<span className="text-amber-400">یار</span>
                 </span>
-                <span className="block text-xs text-brand-100/60 font-semibold">
+                <span className="block text-xs font-semibold text-brand-100/60">
                   سامانه مدیریت و عملیات نفت و گاز
                 </span>
               </span>
             </a>
-            <p className="mt-5 max-w-md leading-8 text-sm text-brand-100/70">
+            <p className="mt-5 max-w-md text-sm leading-8 text-brand-100/70">
               نرم‌افزار اختصاصی مدیریت عملیات شرکت‌های واردکننده و توزیع‌کننده مواد نفتی؛
               از قرارداد و بارگیری تا مخزن، فروش، مصارف و گزارش سود و زیان هر محموله.
             </p>
@@ -42,7 +42,7 @@ export default function Footer() {
                 href="https://novatechsoft.com"
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex items-center gap-1.5 text-xs font-bold text-amber-400 hover:text-amber-300 transition"
+                className="inline-flex items-center gap-1.5 text-xs font-bold text-amber-400 transition hover:text-amber-300"
               >
                 <span>طراحی و توسعه توسط شرکت نرم‌افزاری نواتیک</span>
                 <ExternalLink className="h-3 w-3" />
@@ -51,11 +51,11 @@ export default function Footer() {
           </div>
 
           <div>
-            <h4 className="mb-4 font-black text-white text-base">ماژول‌ها و بخش‌ها</h4>
+            <h4 className="mb-4 text-base font-black text-white">ماژول‌ها و بخش‌ها</h4>
             <ul className="space-y-3 text-sm">
               {productLinks.map((l) => (
                 <li key={l.label}>
-                  <a href={l.href} className="text-brand-100/70 transition hover:text-amber-400">
+                  <a href={l.href} className="text-brand-100/70 transition hover:text-white">
                     {l.label}
                   </a>
                 </li>
@@ -64,11 +64,11 @@ export default function Footer() {
           </div>
 
           <div>
-            <h4 className="mb-4 font-black text-white text-base">ارتباط و استقرار</h4>
+            <h4 className="mb-4 text-base font-black text-white">ارتباط و استقرار</h4>
             <ul className="space-y-3 text-sm text-brand-100/70">
               {companyLinks.map((l) => (
                 <li key={l.label}>
-                  <a href={l.href} className="transition hover:text-amber-400">
+                  <a href={l.href} className="transition hover:text-white">
                     {l.label}
                   </a>
                 </li>
